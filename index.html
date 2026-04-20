@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BridgeWorks | Client and Expert Opportunity Platform</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="BridgeWorks home">
+        <span class="brand-mark" aria-hidden="true">BW</span>
+        <span>BridgeWorks</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="#home" data-nav="home">Home</a>
+        <a href="#dashboard" data-nav="dashboard">Dashboard</a>
+        <a href="#timeline" data-nav="timeline">Timeline</a>
+        <a href="#opportunities" data-nav="opportunities">Opportunities</a>
+        <a href="#login" data-nav="login">Login</a>
+        <a href="#register" data-nav="register">Register</a>
+        <a href="#admin" data-nav="admin">Admin</a>
+      </nav>
+
+      <div class="role-switch" aria-label="Choose account view">
+        <button class="role-btn active" type="button" data-role="client">Client</button>
+        <button class="role-btn" type="button" data-role="expert">Expert</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="view active" aria-labelledby="home-title">
+        <div class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">Business consultancy network</p>
+            <h1 id="home-title">BridgeWorks</h1>
+            <p class="hero-lede">
+              Connect clients with trusted experts, publish project updates, share references, and turn business needs into concrete opportunities.
+            </p>
+            <div class="hero-actions">
+              <a class="primary-action" href="#dashboard">Open dashboard</a>
+              <a class="secondary-action" href="#opportunities">Browse opportunities</a>
+            </div>
+          </div>
+
+          <div class="network-visual" aria-label="A visual map showing clients, experts, references, and job opportunities connected through BridgeWorks">
+            <div class="visual-node node-client">Client</div>
+            <div class="visual-node node-expert">Expert</div>
+            <div class="visual-node node-jobs">Jobs</div>
+            <div class="visual-node node-ref">References</div>
+            <div class="visual-core">BW</div>
+          </div>
+        </div>
+
+        <div class="section-shell">
+          <div class="section-heading">
+            <p class="eyebrow">How it works</p>
+            <h2>One place for requests, expertise, updates, and proof.</h2>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card">
+              <span class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" role="img"><path d="M7 4h10a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Zm1.5 5h7M8.5 12h5M8.5 15h7" /></svg>
+              </span>
+              <h3>Client requests</h3>
+              <p>Clients publish jobs, shortlist experts, review proposals, and track project momentum.</p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" role="img"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-7 8a7 7 0 0 1 14 0M18 8l2 2 3-4" /></svg>
+              </span>
+              <h3>Expert profiles</h3>
+              <p>Experts show skill areas, availability, references, and active proposals in one focused space.</p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" role="img"><path d="M4 18V6m0 12h16M8 15V9m4 6V5m4 10v-4m4 4V8" /></svg>
+              </span>
+              <h3>Progress timeline</h3>
+              <p>Both sides can post updates, milestones, wins, questions, and reference notes.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="dashboard" class="view" aria-labelledby="dashboard-title">
+        <div class="section-shell dashboard-shell">
+          <div class="section-heading">
+            <p class="eyebrow" id="role-label">Client workspace</p>
+            <h2 id="dashboard-title">Dashboard</h2>
+          </div>
+
+          <div class="metrics-grid" aria-label="Dashboard summary">
+            <article class="metric-card">
+              <span class="metric-label" id="metric-one-label">Open jobs</span>
+              <strong id="metric-one-value">6</strong>
+              <span class="metric-note" id="metric-one-note">2 closing this week</span>
+            </article>
+            <article class="metric-card">
+              <span class="metric-label" id="metric-two-label">Matched experts</span>
+              <strong id="metric-two-value">18</strong>
+              <span class="metric-note" id="metric-two-note">5 newly recommended</span>
+            </article>
+            <article class="metric-card">
+              <span class="metric-label" id="metric-three-label">References</span>
+              <strong id="metric-three-value">12</strong>
+              <span class="metric-note" id="metric-three-note">4 verified partners</span>
+            </article>
+          </div>
+
+          <div class="dashboard-layout">
+            <section class="panel" aria-labelledby="priority-title">
+              <div class="panel-title-row">
+                <h3 id="priority-title">Priority work</h3>
+                <button class="icon-button" type="button" aria-label="Refresh priority work" title="Refresh">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6v5h-5M4 18v-5h5M18.5 10A7 7 0 0 0 6.7 6.2L4 9m2 5a7 7 0 0 0 11.8 3.8L20 15" /></svg>
+                </button>
+              </div>
+              <div id="priority-list" class="work-list"></div>
+            </section>
+
+            <section class="panel" aria-labelledby="profile-title">
+              <div class="panel-title-row">
+                <h3 id="profile-title">Profile snapshot</h3>
+                <button class="icon-button" type="button" aria-label="Edit profile snapshot" title="Edit">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l11-11a2.8 2.8 0 0 0-4-4L4 16v4Zm11-13 2 2" /></svg>
+                </button>
+              </div>
+              <div id="profile-card" class="profile-card"></div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section id="timeline" class="view" aria-labelledby="timeline-title">
+        <div class="section-shell timeline-shell">
+          <div class="section-heading">
+            <p class="eyebrow">Shared activity</p>
+            <h2 id="timeline-title">Timeline</h2>
+          </div>
+
+          <form class="composer" id="post-form">
+            <label for="post-input">Post an update</label>
+            <div class="composer-row">
+              <textarea id="post-input" name="post" rows="3" placeholder="Share a milestone, request, reference, or opportunity update"></textarea>
+              <button class="primary-action" type="submit">Post</button>
+            </div>
+          </form>
+
+          <div class="timeline-controls" aria-label="Timeline filters">
+            <button class="filter-btn active" type="button" data-filter="all">All</button>
+            <button class="filter-btn" type="button" data-filter="jobs">Jobs</button>
+            <button class="filter-btn" type="button" data-filter="references">References</button>
+            <button class="filter-btn" type="button" data-filter="updates">Updates</button>
+          </div>
+
+          <div class="timeline-list" id="timeline-list"></div>
+        </div>
+      </section>
+
+      <section id="connect" class="view" aria-labelledby="connection-title">
+        <div class="section-shell connection-shell">
+          <div class="section-heading">
+            <p class="eyebrow">Expert connection</p>
+            <h2 id="connection-title">Connect with experts</h2>
+          </div>
+
+          <div class="connection-job-card" id="connection-job-card"></div>
+
+          <div class="connection-layout">
+            <section class="connection-panel" aria-labelledby="suggested-experts-title">
+              <h3 id="suggested-experts-title">Suggested experts</h3>
+              <div class="expert-list" id="expert-list"></div>
+            </section>
+
+            <section class="connection-panel" aria-labelledby="chat-title">
+              <h3 id="chat-title">Chat with expert</h3>
+              <div class="chat-window" id="chat-window"></div>
+              <form class="chat-form" id="chat-form">
+                <label class="sr-only" for="chat-message">Chat message</label>
+                <input id="chat-message" name="message" type="text" placeholder="Write a message to the selected expert" required>
+                <button class="primary-action" type="submit">Send</button>
+              </form>
+            </section>
+
+            <form class="query-form" id="query-form">
+              <input type="hidden" id="query-job-id" name="jobId">
+              <div class="form-row">
+                <label for="query-expert">Connect with</label>
+                <select id="query-expert" name="expert" required></select>
+              </div>
+              <div class="form-row">
+                <label for="query-subject">Query subject</label>
+                <input id="query-subject" name="subject" type="text" placeholder="Discovery call, proposal, reference request" required>
+              </div>
+              <div class="form-row">
+                <label for="query-message">Post a query</label>
+                <textarea id="query-message" name="message" rows="5" placeholder="Describe the job need, timeline, budget range, or question for the expert" required></textarea>
+              </div>
+              <button class="primary-action" type="submit">Post query</button>
+              <p class="form-message" id="query-message-status" role="status"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section id="opportunities" class="view" aria-labelledby="opportunities-title">
+        <div class="section-shell opportunities-shell">
+          <div class="section-heading">
+            <p class="eyebrow">Marketplace</p>
+            <h2 id="opportunities-title">Opportunities and references</h2>
+          </div>
+
+          <div class="market-toolbar">
+            <label class="search-field" for="market-search">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-5.2-5.2M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z" /></svg>
+              <input id="market-search" type="search" placeholder="Search sector, skill, company, or location">
+            </label>
+            <select id="market-type" aria-label="Filter opportunity type">
+              <option value="all">All types</option>
+              <option value="job">Jobs</option>
+              <option value="reference">References</option>
+              <option value="proposal">Proposals</option>
+            </select>
+          </div>
+
+          <div class="opportunity-grid" id="opportunity-grid"></div>
+        </div>
+      </section>
+
+      <section id="login" class="view" aria-labelledby="login-title">
+        <div class="section-shell auth-shell">
+          <div class="section-heading">
+            <p class="eyebrow">Secure access</p>
+            <h2 id="login-title">Login</h2>
+          </div>
+
+          <div class="auth-grid">
+            <form class="auth-card" id="login-form">
+              <div class="form-row">
+                <label for="login-role">Account type</label>
+                <select id="login-role" name="role" required>
+                  <option value="client">Client</option>
+                  <option value="expert">Expert</option>
+                  <option value="admin">Admin</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="login-email">Email</label>
+                <input id="login-email" name="email" type="email" placeholder="name@example.com" required>
+              </div>
+              <div class="form-row">
+                <label for="login-password">Password</label>
+                <input id="login-password" name="password" type="password" placeholder="Enter password" required>
+              </div>
+              <button class="primary-action" type="submit">Login</button>
+              <p class="form-message" id="login-message" role="status"></p>
+            </form>
+
+            <aside class="auth-note">
+              <h3>Demo admin account</h3>
+              <p>Email: admin@bridgeworks.local</p>
+              <p>Password: admin123</p>
+              <a class="secondary-action" href="#register">Create client or expert account</a>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section id="register" class="view" aria-labelledby="register-title">
+        <div class="section-shell auth-shell">
+          <div class="section-heading">
+            <p class="eyebrow">Join the network</p>
+            <h2 id="register-title">Registration</h2>
+          </div>
+
+          <form class="auth-card register-card" id="register-form">
+            <div class="form-grid">
+              <div class="form-row">
+                <label for="register-role">Register as</label>
+                <select id="register-role" name="role" required>
+                  <option value="client">Client</option>
+                  <option value="expert">Expert</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="register-name">Full name</label>
+                <input id="register-name" name="name" type="text" placeholder="Your name" required>
+              </div>
+              <div class="form-row">
+                <label for="register-company">Company or headline</label>
+                <input id="register-company" name="company" type="text" placeholder="Company, title, or specialty" required>
+              </div>
+              <div class="form-row">
+                <label for="register-email">Email</label>
+                <input id="register-email" name="email" type="email" placeholder="name@example.com" required>
+              </div>
+              <div class="form-row">
+                <label for="register-password">Password</label>
+                <input id="register-password" name="password" type="password" minlength="6" placeholder="Minimum 6 characters" required>
+              </div>
+              <div class="form-row">
+                <label for="register-focus">Focus area</label>
+                <input id="register-focus" name="focus" type="text" placeholder="Jobs needed, expertise, sector, or location" required>
+              </div>
+            </div>
+            <button class="primary-action" type="submit">Create account</button>
+            <p class="form-message" id="register-message" role="status"></p>
+          </form>
+        </div>
+      </section>
+
+      <section id="admin" class="view" aria-labelledby="admin-title">
+        <div class="section-shell admin-shell">
+          <div class="section-heading">
+            <p class="eyebrow">Platform control</p>
+            <h2 id="admin-title">Admin dashboard</h2>
+          </div>
+
+          <div class="admin-lock" id="admin-lock">
+            <h3>Admin login required</h3>
+            <p>Use the admin account from the login page to manage clients and experts.</p>
+            <a class="primary-action" href="#login">Go to login</a>
+          </div>
+
+          <div class="admin-console" id="admin-console" hidden>
+            <div class="metrics-grid" aria-label="Admin account summary">
+              <article class="metric-card">
+                <span class="metric-label">Clients</span>
+                <strong id="admin-client-count">0</strong>
+                <span class="metric-note">Registered client accounts</span>
+              </article>
+              <article class="metric-card">
+                <span class="metric-label">Experts</span>
+                <strong id="admin-expert-count">0</strong>
+                <span class="metric-note">Registered expert accounts</span>
+              </article>
+              <article class="metric-card">
+                <span class="metric-label">Pending</span>
+                <strong id="admin-pending-count">0</strong>
+                <span class="metric-note">Waiting for approval</span>
+              </article>
+            </div>
+
+            <div class="admin-tabs" aria-label="Admin account filters">
+              <button class="filter-btn active" type="button" data-admin-filter="all">All</button>
+              <button class="filter-btn" type="button" data-admin-filter="client">Clients</button>
+              <button class="filter-btn" type="button" data-admin-filter="expert">Experts</button>
+              <button class="filter-btn" type="button" data-admin-filter="pending">Pending</button>
+            </div>
+
+            <div class="account-table-wrap">
+              <table class="account-table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Email</th>
+                    <th>Focus</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="account-table-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
