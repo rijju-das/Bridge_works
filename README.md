@@ -92,36 +92,30 @@ We eliminate the friction of finding, vetting, and collaborating with the right 
 
 ## Getting Started
 
-### Step 1: Open BridgeWorks
+### Step 1: Visit BridgeWorks
 
-1. Open `index.html` in your web browser
-2. The platform loads instantly—no installation or sign-up required
+Go to: https://rijju-das.github.io/Bridge_works/
 
-### Step 2: Choose Your Role
+The platform loads instantly—no installation or download required
 
-Select whether you want to use BridgeWorks as a **Client** or **Expert**. You can switch roles anytime from the navigation menu.
+### Step 2: Create Your Account
 
-### Step 3: Explore Demo Accounts
+**Create an Account:** 
+1. Sign up with your email
+2. During sign up, select whether you want to join as a **Client** or **Expert**
+3. A confirmation email will be sent to your registered email with your initial password
+4. Use these credentials to log in
+5. You can update your password anytime in your account settings
+6. Once signed in, you can switch roles anytime from the navigation menu
 
-We've pre-populated BridgeWorks with demo data so you can explore all features immediately:
+### Step 3: Complete Your Profile
 
-#### Demo Accounts Available:
+After creating your account:
 
-**Client Account**
-- **Role:** Business Client looking for consultant expertise
-- **Use it to:** Post jobs, browse experts, manage proposals
-- **What you'll see:** Client dashboard with open opportunities, expert directory, verified references
-
-**Expert Account**
-- **Role:** Experienced Consultant
-- **Use it to:** Browse projects, submit proposals, showcase your expertise
-- **What you'll see:** Expert dashboard with available opportunities, active proposals, your professional profile
-
-**Admin Account**
-- **Role:** Platform Administrator
-- **Use it to:** Manage platform content, verify references, oversee accounts
-
-All demo accounts are pre-loaded with realistic sample data—feel free to explore, create, and interact with the platform!
+- **Set up your profile** with your professional information and background
+- **Define your expertise** (for Experts) or **describe your business needs** (for Clients)
+- **Browse opportunities** and start connecting with professionals on BridgeWorks
+- **Post your first project** (if you're a Client) or **submit your first proposal** (if you're an Expert)
 
 ---
 
@@ -163,9 +157,6 @@ A transparent system for building professional trust:
 - Document completed projects with measurable outcomes
 - Build your reputation through verified work history
 - Make informed decisions based on documented success
-
-### ⚙️ Admin Panel
-Platform administration tools for managing accounts, content, and verifications
 
 ---
 
@@ -230,7 +221,7 @@ Platform administration tools for managing accounts, content, and verifications
 BridgeWorks is designed to be intuitive and easy to use. Here are some tips:
 
 - **Switch roles** anytime using the navigation menu
-- **Explore demo data** to understand all features
+- **Explore the marketplace** to discover opportunities and connections
 - **Check the timeline** to see all recent activity
 - **Use messaging** for any questions about proposals or projects
 
@@ -240,7 +231,7 @@ BridgeWorks is designed to be intuitive and easy to use. Here are some tips:
 
 Whether you're a business seeking expert guidance or a consultant ready to showcase your expertise, BridgeWorks is your platform for meaningful professional connections.
 
-**Ready to get started?** Open `index.html` in your browser and begin exploring!
+**Ready to get started?** Visit https://rijju-das.github.io/Bridge_works/ and begin exploring!
 
 ---
 
