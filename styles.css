@@ -4,14 +4,44 @@
   --muted: #5d6965;
   --line: #dce4df;
   --paper: #f7f8f3;
-  --white: #ffffff;
+  --surface: #ffffff;
+  --surface-soft: rgba(255, 255, 255, 0.82);
+  --surface-muted: rgba(255, 255, 255, 0.78);
+  --topbar-bg: rgba(247, 248, 243, 0.88);
+  --active-bg: rgba(31, 122, 88, 0.1);
+  --on-accent: #ffffff;
   --green: #1f7a58;
   --green-dark: #14543e;
   --gold: #d1962f;
   --blue: #3568a7;
   --rose: #bd5b63;
   --shadow: 0 24px 80px rgba(22, 32, 29, 0.13);
+  --panel-shadow: 0 12px 40px rgba(22, 32, 29, 0.06);
+  --body-green-glow: rgba(31, 122, 88, 0.13);
+  --body-gold-glow: rgba(209, 150, 47, 0.16);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ink: #edf4f0;
+  --muted: #a8b4ae;
+  --line: #31423b;
+  --paper: #0f1513;
+  --surface: #17211e;
+  --surface-soft: rgba(23, 33, 30, 0.88);
+  --surface-muted: rgba(19, 28, 25, 0.82);
+  --topbar-bg: rgba(15, 21, 19, 0.9);
+  --active-bg: rgba(86, 192, 143, 0.16);
+  --green: #56c08f;
+  --green-dark: #3fa97d;
+  --gold: #e2ac50;
+  --blue: #72a4e2;
+  --rose: #e2808a;
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
+  --panel-shadow: 0 12px 40px rgba(0, 0, 0, 0.26);
+  --body-green-glow: rgba(63, 169, 125, 0.16);
+  --body-gold-glow: rgba(226, 172, 80, 0.12);
 }
 
 * {
@@ -27,8 +57,8 @@ body {
   min-height: 100vh;
   color: var(--ink);
   background:
-    linear-gradient(115deg, rgba(31, 122, 88, 0.13), transparent 36%),
-    linear-gradient(245deg, rgba(209, 150, 47, 0.16), transparent 32%),
+    linear-gradient(115deg, var(--body-green-glow), transparent 36%),
+    linear-gradient(245deg, var(--body-gold-glow), transparent 32%),
     var(--paper);
 }
 
@@ -70,8 +100,8 @@ svg {
   align-items: center;
   gap: 1rem;
   padding: 0.8rem clamp(1rem, 3vw, 2rem);
-  border-bottom: 1px solid rgba(220, 228, 223, 0.85);
-  background: rgba(247, 248, 243, 0.88);
+  border-bottom: 1px solid var(--line);
+  background: var(--topbar-bg);
   backdrop-filter: blur(18px);
 }
 
@@ -89,7 +119,7 @@ svg {
   height: 2.35rem;
   place-items: center;
   border-radius: 8px;
-  color: var(--white);
+  color: var(--on-accent);
   background: var(--green-dark);
   font-size: 0.82rem;
 }
@@ -112,7 +142,14 @@ svg {
 .main-nav a.active,
 .main-nav a:hover {
   color: var(--ink);
-  background: rgba(31, 122, 88, 0.1);
+  background: var(--active-bg);
+}
+
+.header-actions {
+  display: inline-flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  align-items: center;
 }
 
 .role-switch,
@@ -122,7 +159,24 @@ svg {
   padding: 0.25rem;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: var(--white);
+  background: var(--surface);
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0 0.75rem;
+  color: var(--ink);
+  background: var(--surface);
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.theme-toggle:hover {
+  background: var(--active-bg);
 }
 
 .role-btn,
@@ -138,7 +192,7 @@ svg {
 
 .role-btn.active,
 .filter-btn.active {
-  color: var(--white);
+  color: var(--on-accent);
   background: var(--green-dark);
 }
 
@@ -241,14 +295,14 @@ h3 {
 
 .primary-action {
   border: 1px solid var(--green-dark);
-  color: var(--white);
+  color: var(--on-accent);
   background: var(--green-dark);
   box-shadow: 0 14px 32px rgba(20, 84, 62, 0.22);
 }
 
 .secondary-action {
   border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.78);
+  background: var(--surface-muted);
 }
 
 .network-visual {
@@ -285,7 +339,7 @@ h3 {
   display: grid;
   place-items: center;
   border: 1px solid rgba(255, 255, 255, 0.55);
-  color: var(--white);
+  color: var(--on-accent);
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.18);
 }
 
@@ -363,8 +417,8 @@ h3 {
 .account-table-wrap {
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.82);
-  box-shadow: 0 12px 40px rgba(22, 32, 29, 0.06);
+  background: var(--surface-soft);
+  box-shadow: var(--panel-shadow);
 }
 
 .feature-card {
@@ -443,7 +497,7 @@ h3 {
   border: 1px solid var(--line);
   border-radius: 8px;
   color: var(--ink);
-  background: var(--white);
+  background: var(--surface);
   cursor: pointer;
 }
 
@@ -460,7 +514,7 @@ h3 {
   padding: 0.85rem;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: var(--white);
+  background: var(--surface);
 }
 
 .status {
@@ -507,7 +561,7 @@ h3 {
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 0.45rem 0.6rem;
-  background: var(--white);
+  background: var(--surface);
 }
 
 .composer {
@@ -529,7 +583,7 @@ h3 {
   border-radius: 8px;
   padding: 0.9rem;
   color: var(--ink);
-  background: var(--white);
+  background: var(--surface);
 }
 
 .timeline-controls {
@@ -551,8 +605,8 @@ h3 {
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 1rem;
-  background: rgba(255, 255, 255, 0.82);
-  box-shadow: 0 12px 40px rgba(22, 32, 29, 0.06);
+  background: var(--surface-soft);
+  box-shadow: var(--panel-shadow);
 }
 
 .connection-layout {
@@ -573,7 +627,7 @@ h3 {
   padding: 0.9rem;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: var(--white);
+  background: var(--surface);
 }
 
 .expert-card h4,
@@ -594,7 +648,7 @@ h3 {
   padding: 1rem;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.78);
+  background: var(--surface-muted);
 }
 
 .chat-window {
@@ -607,7 +661,7 @@ h3 {
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 0.8rem;
-  background: var(--white);
+  background: var(--surface);
 }
 
 .chat-message {
@@ -619,7 +673,7 @@ h3 {
 
 .chat-message.mine {
   justify-self: end;
-  color: var(--white);
+  color: var(--on-accent);
   background: var(--green-dark);
 }
 
@@ -646,7 +700,8 @@ h3 {
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 0 0.8rem;
-  background: var(--white);
+  color: var(--ink);
+  background: var(--surface);
 }
 
 .query-form textarea {
@@ -657,7 +712,7 @@ h3 {
   border-radius: 8px;
   padding: 0.9rem;
   color: var(--ink);
-  background: var(--white);
+  background: var(--surface);
 }
 
 .timeline-item {
@@ -701,7 +756,7 @@ h3 {
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 0 0.8rem;
-  background: var(--white);
+  background: var(--surface);
 }
 
 .search-field input {
@@ -716,7 +771,7 @@ select {
   border-radius: 8px;
   padding: 0 0.8rem;
   color: var(--ink);
-  background: var(--white);
+  background: var(--surface);
   cursor: pointer;
 }
 
@@ -761,7 +816,7 @@ select {
   border-radius: 8px;
   padding: 0 0.8rem;
   color: var(--ink);
-  background: var(--white);
+  background: var(--surface);
 }
 
 .form-message {
@@ -786,7 +841,7 @@ select {
   padding: 0.25rem;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: var(--white);
+  background: var(--surface);
 }
 
 .account-table-wrap {
@@ -832,7 +887,7 @@ select {
   border-radius: 8px;
   padding: 0 0.55rem;
   color: var(--ink);
-  background: var(--white);
+  background: var(--surface);
   cursor: pointer;
   font-weight: 800;
 }
@@ -855,7 +910,7 @@ select {
 .type-pill {
   border-radius: 8px;
   padding: 0.35rem 0.55rem;
-  color: var(--white);
+  color: var(--on-accent);
   background: var(--blue);
   font-size: 0.75rem;
   font-weight: 900;
@@ -883,7 +938,7 @@ select {
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 0 0.8rem;
-  background: var(--white);
+  background: var(--surface);
   font-weight: 900;
 }
 
@@ -899,7 +954,12 @@ select {
   }
 
   .role-switch {
+    flex: 1;
+  }
+
+  .header-actions {
     width: 100%;
+    justify-content: stretch;
   }
 
   .role-btn {

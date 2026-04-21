@@ -236,11 +236,14 @@ let currentUser = null;
 let accounts = loadAccounts();
 let chatMessages = {};
 
+const themeStorageKey = "bridgeworks-theme";
 const views = document.querySelectorAll(".view");
 const navLinks = document.querySelectorAll("[data-nav]");
 const roleButtons = document.querySelectorAll(".role-btn");
 const filterButtons = document.querySelectorAll(".filter-btn");
 const adminFilterButtons = document.querySelectorAll("[data-admin-filter]");
+const themeToggle = document.querySelector("#theme-toggle");
+const themeToggleLabel = document.querySelector("#theme-toggle-label");
 const postForm = document.querySelector("#post-form");
 const postInput = document.querySelector("#post-input");
 const marketSearch = document.querySelector("#market-search");
@@ -258,6 +261,26 @@ function loadAccounts() {
 
 function saveAccounts() {
   localStorage.setItem("bridgeworks-accounts", JSON.stringify(accounts));
+}
+
+function getPreferredTheme() {
+  const storedTheme = localStorage.getItem(themeStorageKey);
+
+  if (storedTheme === "light" || storedTheme === "dark") {
+    return storedTheme;
+  }
+
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
+function setTheme(theme) {
+  const isDark = theme === "dark";
+
+  document.documentElement.dataset.theme = theme;
+  themeToggle.setAttribute("aria-pressed", String(isDark));
+  themeToggle.setAttribute("aria-label", `Switch to ${isDark ? "light" : "dark"} mode`);
+  themeToggleLabel.textContent = isDark ? "Light" : "Dark";
+  localStorage.setItem(themeStorageKey, theme);
 }
 
 function escapeHtml(value) {
@@ -716,10 +739,16 @@ document.querySelector("#account-table-body").addEventListener("click", (event) 
   renderAdmin();
 });
 
+themeToggle.addEventListener("click", () => {
+  const currentTheme = document.documentElement.dataset.theme === "dark" ? "dark" : "light";
+  setTheme(currentTheme === "dark" ? "light" : "dark");
+});
+
 marketSearch.addEventListener("input", renderOpportunities);
 marketType.addEventListener("change", renderOpportunities);
 window.addEventListener("hashchange", syncHash);
 
+setTheme(getPreferredTheme());
 renderDashboard();
 renderTimeline();
 renderOpportunities();
